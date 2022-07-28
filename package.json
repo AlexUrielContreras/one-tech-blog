@@ -1,0 +1,25 @@
+{
+  "name": "full-stack-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexUrielContreras/one-tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexUrielContreras/one-tech-blog/issues"
+  },
+  "homepage": "https://github.com/AlexUrielContreras/one-tech-blog#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sequelize": "^6.21.3"
+  }
+}
