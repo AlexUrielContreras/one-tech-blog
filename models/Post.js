@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
 
-class User extends Model{};
+class Post extends Model {};
 
-User.init({
-    
+Post.init({
+
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -12,41 +12,42 @@ User.init({
         autoIncrement: true
     },
 
-    username: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
             notEmpty: true
         }
-    }, 
+    },
 
-    email: {
+    post_url: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            isEmail: true
+            isUrl: true
         }
     },
 
-    password: {
+    post_info: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    user_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-            len: {
-                args: [4, 20],
-                meg: 'Password must be between 4 and 20 characters long'
-            }
+        references: {
+            model: 'user',
+            key: 'id'
         }
     }
-},
+}, 
 {
     sequelize,
-    // disables the creation of createdAt and updatedAt
-    timestamps: false,
-    // stops the auto pluralization of model name by sequelize
     freezeTableName: true,
     underscored: true,
-    tableName: 'user'
+    tableName: 'post'
+
 });
 
-module.exports = User;
+module.exports = Post 
