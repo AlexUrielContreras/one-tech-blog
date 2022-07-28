@@ -31,7 +31,7 @@ Comment.init({
         }
     },
 
-    post_url: {
+    post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
