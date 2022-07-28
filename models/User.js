@@ -35,7 +35,7 @@ User.init({
         validate: {
             len: {
                 args: [4, 20],
-                meg: 'Password must be between 4 and 20 characters long'
+                msg: 'Password must be between 4 and 20 characters long'
             }
         }
     }
