@@ -66,6 +66,7 @@ router.post('/', (req, res) => {
 // Update User
 router.put('/:id', (req, res) => {
     User.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
@@ -104,6 +105,35 @@ router.delete('/:id', (req, res) => {
     })
 });
 
+
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData){
+            res.status(404).json({ message: 'no user found with that email '});
+            return 
+        }
+        
+        const validPw = dbUserData.checkPassword(req.body.password)
+        console.log(validPw)
+
+        if (!validPw) {
+            res.status(400).json({ message: 'Incorrect Password'});
+            return
+        }
+
+        res.json({ dbUserData, message: 'You are now logged in! '})
+
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    })
+})
 
 
 module.exports = router

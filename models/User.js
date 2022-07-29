@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
+const bcrypt = require('bcrypt');
 
-class User extends Model{};
+class User extends Model{
+    checkPassword(userPassword) {
+        return bcrypt.compareSync(userPassword, this.password)    
+    }
+};
 
 User.init({
     
@@ -41,6 +46,16 @@ User.init({
     }
 },
 {
+    hooks: {
+        
+        async beforeCreate(dbUserData) {
+            return dbUserData.password = await bcrypt.hash(dbUserData.password, 10);
+        },
+
+        async beforeUpdate(dbUserData){
+            return dbUserData.password = await bcrypt.hash(dbUserData.password, 10);
+        }
+    },
     sequelize,
     // disables the creation of createdAt and updatedAt
     timestamps: false,
