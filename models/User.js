@@ -47,7 +47,7 @@ User.init({
     // stops the auto pluralization of model name by sequelize
     freezeTableName: true,
     underscored: true,
-    tableName: 'user'
+    tableName: 'user',
 });
 
 module.exports = User;

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 
 router.get('/', (req, res) => {
@@ -15,7 +15,19 @@ router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: [
+            {
+                model: Comment,
+                atrributes: ['comment_text', 'user_id'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    }
+                ]
+            }
+        ]
     })
     .then(dbPostData => {
         if (!dbPostData) {
