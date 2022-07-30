@@ -1,15 +1,15 @@
-<ul>
+<ul class="post-list">
     {{#each posts as |p|}}
-        <li>
+        <li class="post-list-items">
             <artical>
-                <div>
+                <div class="post-title padding-lr">
                     <h2>{{ p.title }}</h2>
                     <span>by {{user.username}} {{p.createdAt}}</span>
                 </div>
-                <div>
+                <div class="post-body">
                     <p>{{ p.post_info }}</p>
                 </div>
-                <div>
+                <div class="padding-lr">
                     {{ comments.length }} <span>Comment</span> 
                 </div>
             </artical>

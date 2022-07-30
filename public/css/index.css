@@ -5,7 +5,8 @@
 html, body {
     min-height: 100%;
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
 } 
 
 h1,
@@ -25,16 +26,50 @@ a {
 ul {
     list-style: none;
     padding: 0;
-    margin: 5vh auto;
-    max-width: 80rem
+}
+
+span {
+    font-size: 1.2rem;
+    padding-top: 5px 
 }
 
 .page-title {
-    margin: 1vh 0;
-    border-bottom: 2px solid black
+    padding: 1vh 0;
+    border-bottom: 2px solid black;
+    font-family: 'Nunito', sans-serif;
 }
 
 .wrapper {
     max-width: 70vw;
     margin: 0 auto
+}
+
+.post-list {
+    margin: 5vh auto;
+    max-width: 77rem;
+}
+
+.post-list-items {
+    margin: 3vh;
+    padding-left: 1vh ;
+    border-left: 5px solid black
+}
+
+.post-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-body {
+    margin: 5px 0;
+    border: 2px solid black;
+    border-radius: 15px
+}
+
+.post-body > p {
+    margin: 10px
+}
+
+.padding-lr {
+    padding: 0 10px
 }
