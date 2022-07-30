@@ -1,0 +1,18 @@
+<ul>
+    {{#each posts as |p|}}
+        <li>
+            <artical>
+                <div>
+                    <h2>{{ p.title }}</h2>
+                    <span>by {{user.username}} {{p.createdAt}}</span>
+                </div>
+                <div>
+                    <p>{{ p.post_info }}</p>
+                </div>
+                <div>
+                    {{ comments.length }} <span>Comment</span> 
+                </div>
+            </artical>
+        </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 5vh auto;
+    max-width: 80rem
+}
+
+.page-title {
+    margin: 1vh 0;
+    border-bottom: 2px solid black
+}
+
+.wrapper {
+    max-width: 70vw;
+    margin: 0 auto
+}
