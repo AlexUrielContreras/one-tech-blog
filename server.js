@@ -3,6 +3,9 @@ const sequelize = require('./config/connections');
 const path = require('path')
 const app = express();
 const { engine } = require('express-handlebars');
+const session = require('express-session');
+
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
 
@@ -19,6 +22,18 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
+// EXPRESS SESSION
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: process.env.COOKIE_PW,
+    cookie: {},
+    resave: false,
+    saveUninitialized: false
+};
+
+app.use(session(sess));
 
 app.use(routes);
 
