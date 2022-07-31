@@ -18,6 +18,16 @@ h6 {
     margin: 0
 }
 
+header {
+    display: flex;
+    justify-content: space-between ;
+    align-items: end;
+    border-bottom: 2px solid black;
+    padding: 1vh 0;
+    letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
 a {
     text-decoration: none;
     color: black
@@ -31,12 +41,6 @@ ul {
 span {
     font-size: 1.2rem;
     padding-top: 5px 
-}
-
-.page-title {
-    padding: 1vh 0;
-    border-bottom: 2px solid black;
-    font-family: 'Nunito', sans-serif;
 }
 
 .wrapper {
@@ -72,4 +76,37 @@ span {
 
 .padding-lr {
     padding: 0 10px
+}
+
+.form-wrapper {
+    min-height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.signup-form > section, .login-form > section {
+    display: flex;
+    flex-direction: column
+}
+
+section > input {
+    margin-bottom: 1vh
+}
+
+div > button[type="submit"] {
+    min-width: 85px;
+    min-height: 30px;
+    border: 2px solid black;
+    border-radius: 80px;
+    background: none;
+  
+}
+
+footer {
+    border-top: 1px solid black;
+    position: static;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 8vh
 }
