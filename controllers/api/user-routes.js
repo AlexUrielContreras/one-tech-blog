@@ -61,7 +61,6 @@ router.post('/', (req, res) => {
         req.session.save(() => {
             req.session.user_id = dbUserData.id,
             req.session.username = dbUserData.username,
-            req.session.email = dbUserData.email
             req.session.loggedIn = true
 
             console.log(req.session)
@@ -139,13 +138,25 @@ router.post('/login', (req, res) => {
             return
         }
 
-        res.json({ dbUserData, message: 'You are now logged in! '})
+        res.json({user: dbUserData, message: 'you are now logged in '});
+       
 
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err)
     })
+});
+
+
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(200).end()
+        })
+    } else {
+        res.status(404).end()
+    }
 })
 
 
