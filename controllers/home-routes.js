@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
         
         console.log(posts)
 
-        res.render('homepage' , {posts})
+        res.render('homepage' , {posts, loggedIn: req.session.loggedIn})
     })
     .catch(err => {
         console.log(err)

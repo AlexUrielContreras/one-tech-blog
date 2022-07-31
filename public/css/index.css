@@ -102,11 +102,3 @@ div > button[type="submit"] {
     background: none;
   
 }
-
-footer {
-    border-top: 1px solid black;
-    position: static;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 8vh
-}
