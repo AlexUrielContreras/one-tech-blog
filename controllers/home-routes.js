@@ -18,9 +18,8 @@ router.get('/', (req, res) => {
 
         const posts = viewPostData.map(post => post.get({ plain: true }));
         
-        console.log(posts)
 
-        res.render('homepage' , {posts, loggedIn: req.session.loggedIn})
+        res.render('homepage' , {posts, loggedIn: req.session.loggedIn, username: req.session.username})
     })
     .catch(err => {
         console.log(err)
@@ -37,6 +36,31 @@ router.get('/login', (req, res) => {
     res.render('signup')
 })
 
+router.get('/profile/:username', (req, res) => {
+    User.findOne({
+        where: {
+            username: req.params.username
+        }
+    })
+    .then(dbUserData => {
+        console.log(dbUserData);
+
+        const user = dbUserData.get({plain: true});
+
+        console.log(user)
+
+        if (req.params.username === req.session.username) {
+            res.render('profile', {user,  loggedIn: req.session.loggedIn, isUser: req.session.isUser})
+        } else {
+            res.render('profile', {user, loggedIn: req.session.loggedIn, isUser: false, username: req.session.username})
+        }
+        
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    })
+})
 
 
 

@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>One Tech Blog</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="description" content="" />
-        <link rel="stylesheet" href='css/index.css' />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <title>One Tech Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href='/css/index.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+</head>
 
-    <body>
-        <div class="wrapper">
-            <header>
-                <h1 class="page-title"><a href='/'>One Tech Blog</a></h1>
-                <nav>
-                    {{#if loggedIn}}
-                        <button type="button" class="logout-btn">logout</button>
-                    {{else}}
-                        <span><a href='/login'>Login</a></span>
-                    {{/if}}
-                </nav>
-            </header>
-            <main>
-                {{{ body }}}
-            </main>
-            <footer>
-               
-            </footer>
-        </div>
-        {{#if loggedIn}}
-            <script src="javascript/logout.js"></script>
-        {{/if}}
-    </body>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="page-title"><a href='/'>One Tech Blog</a></h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href='/profile/{{username}}'>Profile</a>
+                <button type="button" class="logout-btn">logout</button>
+                {{else}}
+                <span><a href='/login'>Login</a></span>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
 
+        </footer>
+    </div>
+     {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
 </html>
