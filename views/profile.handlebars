@@ -1,4 +1,4 @@
-<section class="profile-greeting"> 
+<section class="profile-greeting">
     {{#if isUser}}
     <div class="greeting-text">
         <h2>{{timeOfDay date}} {{user.username}}</h2>
@@ -12,27 +12,55 @@
 <section class="profile-wrapper">
     <div>
         {{#if isUser}}
-            <h2>My Posts</h2>
+        <h2>My Posts</h2>
         {{else}}
-            <h2>{{user.username}}'s Posts</h2>
+        <h2>{{user.username}}'s Posts</h2>
         {{/if}}
         <div class="profile-post">
-            <ul> 
-                {{#if user.posts}}    
-                {{#each user.posts as |post|}}      
-                    <li class="profile-post-list">
-                        <h3>{{post.title}}</h3>
-                        <p>{{post.post_info}}</p>
-                    </li>  
+            <ul>
+                {{#if user.posts}}
+                {{#each user.posts as |post|}}
+                <li class="profile-post-list">
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.post_info}}</p>
+                </li>
                 {{/each}}
                 {{else}}
-                    <h4>User has no posts</h4>
+                <h4>User has no posts</h4>
                 {{/if}}
             </ul>
         </div>
     </div>
+    {{#if isUser}}
+    <section>
+        <h2>Create New Post</h2>
+        <div class="create-post">
+            <form class="post-form">
+                <div>
+                    <label for='title'>Title: </label>
+                    <input type='text' id="title" name="post-create" />
+                </div>
+                <div>
+                    <label for="post-url">Post url: </label>
+                    <input type="text" id="post-url" name="post-create" />
+                </div>
+                <div>
+                    <label for="post-info">Description: </label>
+                    <textarea type="text" id="post-info"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    {{/if}}
     <div>
+        {{#if isUser}}
         <h2>My Likes</h2>
+        {{else}}
+        <h2>{{user.username}}'s likes</h2>
+        {{/if}}
         <div class="like-list">
             <ul>
                 <li>Coming Soon</li>
@@ -40,3 +68,8 @@
         </div>
     </div>
 </section>
+{{#if isUser}}
+<script src="/javascript/post.js"></script>
+{{/if}}
+
+

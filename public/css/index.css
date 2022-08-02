@@ -134,9 +134,16 @@ div > button[type="submit"] {
 .profile-wrapper {
     margin-top: 2vh;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    flex-wrap:wrap
 }
 
 .profile-post > h2 {
     text-decoration: underline
+}
+
+.create-post {
+    border: 2px solid black;
+    padding: 15px;
+    min-width: 32vw;
 }
