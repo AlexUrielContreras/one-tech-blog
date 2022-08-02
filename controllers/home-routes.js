@@ -43,14 +43,14 @@ router.get('/profile/:username', (req, res) => {
         }
     })
     .then(dbUserData => {
-        console.log(dbUserData);
+
+        const date = new Date().getHours();
 
         const user = dbUserData.get({plain: true});
 
-        console.log(user)
 
         if (req.params.username === req.session.username) {
-            res.render('profile', {user,  loggedIn: req.session.loggedIn, isUser: req.session.isUser})
+            res.render('profile', {user,  date, loggedIn: req.session.loggedIn, isUser: req.session.isUser})
         } else {
             res.render('profile', {user, loggedIn: req.session.loggedIn, isUser: false, username: req.session.username})
         }

@@ -1,5 +1,5 @@
 async function logout() {
-
+    
     const response = await fetch('/api/users/logout', {
         method: 'post',
         headers: {
@@ -12,6 +12,7 @@ async function logout() {
     } else {
         alert(response.statusText)
     }
+    
 }
 
 
