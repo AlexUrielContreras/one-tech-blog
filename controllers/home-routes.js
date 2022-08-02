@@ -51,7 +51,7 @@ router.get('/profile/:username', (req, res) => {
     .then(dbUserData => {
 
         if (!dbUserData) {
-            res.render('error');
+            res.status(404).end()
             return
         }
 
