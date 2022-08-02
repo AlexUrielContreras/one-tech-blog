@@ -9,14 +9,15 @@
     </div>
     {{/if}}
 </section>
-<section class="profile-wrapper">
+
+<section class="profile-wrapper ">
     <div>
         {{#if isUser}}
         <h2>My Posts</h2>
         {{else}}
         <h2>{{user.username}}'s Posts</h2>
         {{/if}}
-        <div class="profile-post">
+        <div class="profile-post border-box">
             <ul>
                 {{#if user.posts}}
                 {{#each user.posts as |post|}}
@@ -34,26 +35,27 @@
     {{#if isUser}}
     <section>
         <h2>Create New Post</h2>
-        <div class="create-post">
-            <form class="post-form">
-                <div>
+        <div class="create-post border-box">
+            <form class="post-form form">
+                <section >
                     <label for='title'>Title: </label>
                     <input type='text' id="title" name="post-create" />
-                </div>
-                <div>
+                </section>
+                <section>
                     <label for="post-url">Post url: </label>
                     <input type="text" id="post-url" name="post-create" />
-                </div>
-                <div>
+                </section>
+                <section>
                     <label for="post-info">Description: </label>
-                    <textarea type="text" id="post-info"></textarea>
-                </div>
+                    <textarea type="text" id="post-info" rows="4" cols="50" maxlength="200"></textarea>
+                </section>
                 <div>
                     <button type="submit">Post</button>
                 </div>
             </form>
         </div>
     </section>
+
     {{/if}}
     <div>
         {{#if isUser}}
@@ -61,13 +63,14 @@
         {{else}}
         <h2>{{user.username}}'s likes</h2>
         {{/if}}
-        <div class="like-list">
+        <div class="like-list border-box">
             <ul>
                 <li>Coming Soon</li>
             </ul>
         </div>
     </div>
 </section>
+
 {{#if isUser}}
 <script src="/javascript/post.js"></script>
 {{/if}}

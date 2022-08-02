@@ -50,6 +50,11 @@ router.get('/profile/:username', (req, res) => {
     })
     .then(dbUserData => {
 
+        if (!dbUserData) {
+            res.render('error');
+            return
+        }
+
         const date = new Date().getHours();
         console.log(date)
 

@@ -85,7 +85,7 @@ span {
     align-items: center
 }
 
-.signup-form > section, .login-form > section {
+.form > section{
     display: flex;
     flex-direction: column
 }
@@ -104,18 +104,17 @@ div > button[type="submit"] {
 }
 
 .profile-greeting {
-    border: 2px solid black ;
     text-align: center;
-    margin-top: 10px;
+    margin: 3vh 0 6vh;
     padding: 20px 0;
+    font-size: 1.5rem;
+    border: 2px solid black;
 }
 
 .profile-post {
     width: 32vw;
     max-height: 50vh;
-    margin: 10px 0;
     padding: 15px;
-    border: 2px solid black;
     overflow: auto
 }
 .profile-post-list {
@@ -127,7 +126,6 @@ div > button[type="submit"] {
     max-height: 50vh;
     margin: 10px 0;
     padding: 15px;
-    border: 2px solid black;
     overflow: auto
 }
 
@@ -143,7 +141,15 @@ div > button[type="submit"] {
 }
 
 .create-post {
-    border: 2px solid black;
     padding: 15px;
-    min-width: 32vw;
+    width: 32vw;
+}
+
+.border-box {
+    border: 2px solid black;
+    margin: 1vh 0
+}
+
+textarea {
+    resize: none
 }
