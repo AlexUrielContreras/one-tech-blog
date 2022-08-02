@@ -40,13 +40,21 @@ router.get('/profile/:username', (req, res) => {
     User.findOne({
         where: {
             username: req.params.username
-        }
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['title', 'post_info']
+            }
+        ]
     })
     .then(dbUserData => {
 
         const date = new Date().getHours();
+        console.log(date)
 
         const user = dbUserData.get({plain: true});
+        console.log(user)
 
 
         if (req.params.username === req.session.username) {

@@ -1,12 +1,42 @@
-{{#if isUser}}
-    <section> 
-        <div class="profile-gretting">
-            <h2>{{{timeOfDay date}}}</h2>
-            <h3>{{user.username}}</h3>
-        </div>
-    </section>
-    
+<section class="profile-greeting"> 
+    {{#if isUser}}
+    <div class="greeting-text">
+        <h2>{{timeOfDay date}} {{user.username}}</h2>
+    </div>
     {{else}}
-    Now viewing {{user.username}}'s profile
-{{/if}}
-
+    <div>
+        <h2>Now viewing {{user.username}}'s profile</h2>
+    </div>
+    {{/if}}
+</section>
+<section class="profile-wrapper">
+    <div>
+        {{#if isUser}}
+            <h2>My Posts</h2>
+        {{else}}
+            <h2>{{user.username}}'s Posts</h2>
+        {{/if}}
+        <div class="profile-post">
+            <ul> 
+                {{#if user.posts}}    
+                {{#each user.posts as |post|}}      
+                    <li class="profile-post-list">
+                        <h3>{{post.title}}</h3>
+                        <p>{{post.post_info}}</p>
+                    </li>  
+                {{/each}}
+                {{else}}
+                    <h4>User has no posts</h4>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>My Likes</h2>
+        <div class="like-list">
+            <ul>
+                <li>Coming Soon</li>
+            </ul>
+        </div>
+    </div>
+</section>

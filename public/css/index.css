@@ -103,6 +103,40 @@ div > button[type="submit"] {
   
 }
 
-.profile-gretting {
-    margin-top: 10px
+.profile-greeting {
+    border: 2px solid black ;
+    text-align: center;
+    margin-top: 10px;
+    padding: 20px 0;
+}
+
+.profile-post {
+    width: 32vw;
+    max-height: 50vh;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid black;
+    overflow: auto
+}
+.profile-post-list {
+    margin-top: 3vh;
+}
+
+.like-list {
+    width: 32vw;
+    max-height: 50vh;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid black;
+    overflow: auto
+}
+
+.profile-wrapper {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between
+}
+
+.profile-post > h2 {
+    text-decoration: underline
 }
