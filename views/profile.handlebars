@@ -1,5 +1,11 @@
 {{#if isUser}}
-    Hello {{user.username}}
+    <section> 
+        <div class="profile-gretting">
+            <h2>Good Moring</h2>
+            <h3>{{user.username}}</h3>
+        </div>
+    </section>
+    
     {{else}}
     Now viewing {{user.username}}'s profile
 {{/if}}

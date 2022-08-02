@@ -102,3 +102,7 @@ div > button[type="submit"] {
     background: none;
   
 }
+
+.profile-gretting {
+    margin-top: 10px
+}

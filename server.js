@@ -2,7 +2,7 @@ const express = require('express');
 const sequelize = require('./config/connections');
 const path = require('path')
 const app = express();
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const session = require('express-session');
 
 require('dotenv').config();
@@ -19,7 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')));
 
 // EXPRESS HANDLEBARS 
-app.engine('handlebars', engine());
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers })
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
