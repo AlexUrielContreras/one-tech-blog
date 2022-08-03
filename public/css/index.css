@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    
 }
 
 html, body {
@@ -7,6 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 100%
 } 
 
 h1,
@@ -14,7 +16,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     margin: 0
 }
 
@@ -38,9 +41,12 @@ ul {
     padding: 0;
 }
 
-span {
+nav > a {
+    font-size: 1.2rem
+}
+
+.font-span {
     font-size: 1.2rem;
-    padding-top: 5px 
 }
 
 .wrapper {
@@ -50,11 +56,11 @@ span {
 
 .post-list {
     margin: 5vh auto;
-    max-width: 77rem;
+    max-width: 65vw;
 }
 
 .post-list-items {
-    margin: 3vh;
+    margin-bottom: 3vh;
     padding-left: 1vh ;
     border-left: 5px solid black
 }
@@ -62,16 +68,13 @@ span {
 .post-title {
     display: flex;
     justify-content: space-between;
+    font-size: 1em
 }
 
 .post-body {
-    margin: 5px 0;
     border: 2px solid black;
-    border-radius: 15px
-}
-
-.post-body > p {
-    margin: 10px
+    border-radius: 15px;
+    padding: 10px
 }
 
 .padding-lr {
@@ -103,22 +106,37 @@ div > button[type="submit"] {
   
 }
 
+
+/*  PROFILE STYLES */
+
 .profile-greeting {
     text-align: center;
-    margin: 3vh 0 6vh;
+    margin: 3vh 0 6vh 0;
     padding: 20px 0;
     font-size: 1.5rem;
     border: 2px solid black;
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.profile-wrapper > section {
+    margin-bottom:4vh
 }
 
 .profile-post {
     width: 32vw;
     max-height: 50vh;
     padding: 15px;
-    overflow: auto
+    overflow: auto;
+    margin-bottom: 2vh
 }
+
 .profile-post-list {
-    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 .like-list {
@@ -127,17 +145,6 @@ div > button[type="submit"] {
     margin: 10px 0;
     padding: 15px;
     overflow: auto
-}
-
-.profile-wrapper {
-    margin-top: 2vh;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap:wrap
-}
-
-.profile-post > h2 {
-    text-decoration: underline
 }
 
 .create-post {

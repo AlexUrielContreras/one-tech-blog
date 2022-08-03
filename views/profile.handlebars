@@ -11,7 +11,7 @@
 </section>
 
 <section class="profile-wrapper ">
-    <div>
+    <section>
         {{#if isUser}}
         <h2>My Posts</h2>
         {{else}}
@@ -20,18 +20,18 @@
         <div class="profile-post border-box">
             <ul>
                 {{#if user.posts}}
-                {{#each user.posts as |post|}}
-                <li class="profile-post-list">
-                    <h3>{{post.title}}</h3>
-                    <p>{{post.post_info}}</p>
-                </li>
-                {{/each}}
+                    {{#each user.posts as |post|}}
+                        <li class="profile-post-list">
+                            <h3>{{post.title}}</h3>
+                            <p>{{post.post_info}}</p>
+                        </li>
+                    {{/each}}
                 {{else}}
-                <h4>User has no posts</h4>
+                    <h4>User has no posts</h4>
                 {{/if}}
             </ul>
         </div>
-    </div>
+    </section>
     {{#if isUser}}
     <section>
         <h2>Create New Post</h2>
@@ -47,7 +47,7 @@
                 </section>
                 <section>
                     <label for="post-info">Description: </label>
-                    <textarea type="text" id="post-info" rows="4" cols="50" maxlength="200"></textarea>
+                    <textarea type="text" id="post-info" rows="10" cols="80" maxlength="500"></textarea>
                 </section>
                 <div>
                     <button type="submit">Post</button>
@@ -72,7 +72,7 @@
 </section>
 
 {{#if isUser}}
-<script src="/javascript/post.js"></script>
+    <script src="/javascript/post.js"></script>
 {{/if}}
 
 
