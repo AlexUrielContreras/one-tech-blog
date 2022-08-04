@@ -1,0 +1,12 @@
+<artical>
+    <div class="post-title">
+        <h2>{{ title }}</h2>
+        <span class="font-span">by {{user.username}} {{createdAt}}</span>
+    </div>
+    <div class="post-body">
+        <p>{{ post_info }}</p>
+    </div>
+    <div>
+        {{ comments.length }} <a href="/post/{{id}}"><span class="font-span">Comment</span> </a>
+    </div>
+</artical>

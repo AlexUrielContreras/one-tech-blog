@@ -61,8 +61,6 @@ nav > a {
 
 .post-list-items {
     margin-bottom: 3vh;
-    padding-left: 1vh ;
-    border-left: 5px solid black
 }
 
 .post-title {
@@ -71,14 +69,16 @@ nav > a {
     font-size: 1em
 }
 
+
+.post-title > span {
+    padding-top: .6vh
+}
+
 .post-body {
     border: 2px solid black;
     border-radius: 15px;
-    padding: 10px
-}
-
-.padding-lr {
-    padding: 0 10px
+    padding: 10px;
+    margin-top: 1vh
 }
 
 .form-wrapper {

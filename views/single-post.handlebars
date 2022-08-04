@@ -1,0 +1,17 @@
+<div>
+    <div class="post-list-items">
+        {{> post-info post}}        
+    </div>
+</div>
+
+
+<div>
+    <ul>
+        {{#each post.comments}}
+            <li>
+                {{comment_text}} by {{user.username}}
+            </li>     
+        {{/each}}
+    </ul>
+   
+</div>
