@@ -2,6 +2,10 @@
     {{#each posts as |p|}}
         <li class="post-list-items">
             {{> post-info}}
+            <div>
+                {{ comments.length }} <a href="/post/{{id}}">
+                <span class="font-span">Comment</span> </a>
+            </div>
         </li>
     {{/each}}
 </ul>

@@ -1,17 +1,22 @@
-<div>
-    <div class="post-list-items">
+<div class="single-post-wrapper">
+    
+    <div class="post-list-items ">
         {{> post-info post}}        
     </div>
-</div>
+    <section class="add-comments">
+    <div>
+        <h2>Add Comment</h2>
+    </div>
 
-
-<div>
-    <ul>
-        {{#each post.comments}}
-            <li>
-                {{comment_text}} by {{user.username}}
-            </li>     
-        {{/each}}
-    </ul>
-   
+    <div class="comment-wrapper">
+        <ul>
+            {{#each post.comments}}
+                <li class='comment-list'>
+                    {{comment_text}} by {{user.username}} on {{createdAt}}
+                </li>     
+            {{/each}}
+        </ul>
+    
+    </div>
+    </section>
 </div>

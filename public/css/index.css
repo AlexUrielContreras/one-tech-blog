@@ -78,7 +78,7 @@ nav > a {
     border: 2px solid black;
     border-radius: 15px;
     padding: 10px;
-    margin-top: 1vh
+    margin: 1vh 0
 }
 
 .form-wrapper {
@@ -131,9 +131,14 @@ div > button[type="submit"] {
     width: 32vw;
     max-height: 50vh;
     padding: 15px;
-    overflow: auto;
+    overflow-y: scroll;
     margin-bottom: 2vh
 }
+
+.profile-post::-webkit-scrollbar {
+    display: none
+}
+
 
 .profile-post-list {
     margin-bottom: 3vh;
@@ -159,4 +164,28 @@ div > button[type="submit"] {
 
 textarea {
     resize: none
+}
+
+
+/*    Comment styles */
+
+.comment-list {
+    border: 2px solid black;
+    padding: 1vh;
+    margin: 2vh 0
+}
+
+.comment-wrapper {
+    max-width: 40%;
+    max-height: 70vh;
+    overflow: auto
+}
+
+.comment-wrapper::-webkit-scrollbar {
+    display: none
+}
+
+.add-comments {
+    display: flex;
+    justify-content:space-between
 }
