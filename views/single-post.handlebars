@@ -6,6 +6,12 @@
     <section class="add-comments">
     <div>
         <h2>Add Comment</h2>
+        <textarea id='post-comment'></textarea>
+        {{#if loggedIn}}
+        <button type="button" id="comment-btn">add comment</button>
+        {{else}}
+        <p>Log in to add a comment</p>
+        {{/if}}
     </div>
 
     <div class="comment-wrapper">
@@ -20,3 +26,4 @@
     </div>
     </section>
 </div>
+<script src="/javascript/add-comment.js"></script>
