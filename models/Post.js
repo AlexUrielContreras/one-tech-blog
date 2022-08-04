@@ -29,7 +29,7 @@ Post.init({
     },
 
     post_info: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
     },
 
