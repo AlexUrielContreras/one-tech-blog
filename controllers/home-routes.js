@@ -114,6 +114,23 @@ router.get('/post/:id', (req, res) => {
         console.log(err)
         res.status(500).json(err)
     })
+});
+
+router.get('/post/edit/:id', (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(viewPostData => {
+
+        const post = viewPostData.get({ plain: true})
+        res.render('edit', {post, loggedIn: req.session.loggedIn, username: req.session.username})
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err)
+    })
 })
 
 
