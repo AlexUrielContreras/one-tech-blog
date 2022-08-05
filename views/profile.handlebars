@@ -1,21 +1,21 @@
 <section class="profile-greeting">
     {{#if isUser}}
-    <div class="greeting-text">
-        <h2>{{timeOfDay date}} {{user.username}}</h2>
-    </div>
+        <div class="greeting-text">
+            <h2>{{timeOfDay date}} {{user.username}}</h2>
+        </div>
     {{else}}
-    <div>
-        <h2>Now viewing {{user.username}}'s profile</h2>
-    </div>
+        <div>
+            <h2>Now viewing {{user.username}}'s profile</h2>
+        </div>
     {{/if}}
 </section>
 
 <section class="profile-wrapper ">
     <section>
         {{#if isUser}}
-        <h2>My Posts</h2>
+            <h2>My Posts</h2>
         {{else}}
-        <h2>{{user.username}}'s Posts</h2>
+            <h2>{{user.username}}'s Posts</h2>
         {{/if}}
         <div class="profile-post border-box">
             <ul>
@@ -33,6 +33,7 @@
             </ul>
         </div>
     </section>
+    
     {{#if isUser}}
     <section>
         <h2>Create New Post</h2>

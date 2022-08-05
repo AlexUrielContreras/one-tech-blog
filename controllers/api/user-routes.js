@@ -63,6 +63,7 @@ router.post('/', (req, res) => {
             req.session.username = dbUserData.username,
             req.session.loggedIn = true,
             req.session.isUser = true
+            res.session.isOwner = dbUserData.username
 
             console.log(req.session)
 
