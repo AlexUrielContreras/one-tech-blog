@@ -3,7 +3,7 @@ async function editFormHandler(e) {
 
     const title = document.getElementById('edit-title').value.trim();
     const post_url = document.getElementById('edit-url').value.trim();
-    const post_text = document.getElementById('edit-info').value.trim();
+    const post_info = document.getElementById('edit-info').value.trim();
     const id = window.location.toString().trim('/')[window.location.toString().trim('/').length - 1]
 
     const response = await fetch(`/api/posts/${id}`, {
@@ -11,7 +11,7 @@ async function editFormHandler(e) {
         body: JSON.stringify({
             title, 
             post_url,
-            post_text
+            post_info
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -19,8 +19,7 @@ async function editFormHandler(e) {
     })
 
     if (response.ok) {
-        window.location.reload()
-        alert('content updated')
+        window.location.replace('/')
     } else {
         alert(response.statusText)
     }
