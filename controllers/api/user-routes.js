@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ message: 'No user with this id '});
             return
         }
-
+        
         res.json(dbUserData)
     })
     .catch(err => {
@@ -63,12 +63,8 @@ router.post('/', (req, res) => {
             req.session.username = dbUserData.username,
             req.session.loggedIn = true,
             req.session.isUser = true
-            res.session.isOwner = dbUserData.username
-
-            console.log(req.session)
 
             res.json(dbUserData)
-           
         })
     })
     .catch(err => {
@@ -133,7 +129,6 @@ router.post('/login', (req, res) => {
         }
         
         const validPw = dbUserData.checkPassword(req.body.password)
-        console.log(validPw)
 
         if (!validPw) {
             res.status(400).json({ message: 'Incorrect Password'});
@@ -150,9 +145,6 @@ router.post('/login', (req, res) => {
 
             res.json({user: dbUserData, message: 'you are now logged in '});
         })
-       
-       
-
     })
     .catch(err => {
         console.log(err);

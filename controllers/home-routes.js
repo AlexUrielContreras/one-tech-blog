@@ -17,8 +17,6 @@ router.get('/', (req, res) => {
     .then(viewPostData => {
 
         const posts = viewPostData.map(post => post.get({ plain: true }));
-        
-        console.log(posts)
 
         res.render('homepage' , {posts, loggedIn: req.session.loggedIn, username: req.session.username})
     })
@@ -57,11 +55,8 @@ router.get('/profile/:username', (req, res) => {
         }
 
         const date = new Date().getHours();
-        console.log(date)
-
+  
         const user = dbUserData.get({plain: true});
-        console.log(user)
-
 
         if (req.params.username === req.session.username) {
             res.render('profile', {user,  date, loggedIn: req.session.loggedIn, isUser: req.session.isUser, username: req.session.username})
@@ -105,8 +100,6 @@ router.get('/post/:id', (req, res) => {
         }
 
         const post = viewPostData.get({ plain: true });
-        
-        console.log(post)
 
         res.render('single-post', {post, loggedIn: req.session.loggedIn, username: req.session.username})
     })

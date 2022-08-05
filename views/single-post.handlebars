@@ -3,27 +3,27 @@
     <div class="post-list-items ">
         {{> post-info post}}   
     </div>
-    <section class="add-comments">
-    <div>
-        <h2>Add Comment</h2>
-        <textarea id='post-comment'></textarea>
-        {{#if loggedIn}}
-        <button type="button" id="comment-btn">add comment</button>
-        {{else}}
-        <p>Log in to add a comment</p>
-        {{/if}}
-    </div>
 
-    <div class="comment-wrapper">
-        <ul>
-            {{#each post.comments}}
-                <li class='comment-list'>
-                    {{comment_text}} by {{user.username}} on {{createdAt}}
-                </li>     
-            {{/each}}
-        </ul>
-    
-    </div>
+    <section class="add-comments">
+        <div>
+            <h2>Add Comment</h2>
+            <textarea id='post-comment'></textarea>
+            {{#if loggedIn}}
+            <button type="button" id="comment-btn">add comment</button>
+            {{else}}
+            <p>Log in to add a comment</p>
+            {{/if}}
+        </div>
+
+        <div class="comment-wrapper">
+            <ul>
+                {{#each post.comments}}
+                    <li class='comment-list'>
+                        {{comment_text}} by {{user.username}} on {{createdAt}}
+                    </li>     
+                {{/each}}
+            </ul>
+        </div>
     </section>
 </div>
 <script src="/javascript/add-comment.js"></script>
