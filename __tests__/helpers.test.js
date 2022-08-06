@@ -1,4 +1,4 @@
-const { timeOfDay, formatDate } = require('../utils/helpers')
+const { timeOfDay, formatDate, formatPlural } = require('../utils/helpers')
 
 
 test('return message based on time of day', () => {
@@ -19,4 +19,9 @@ test('returns date and mm/dd/yy format', () => {
     const date = new Date('08-06-2022 11:15:25')
 
     expect(formatDate(date)).toBe('6/8/2022')
+});
+
+test('return the plural word', () => {
+    expect(formatPlural('comment', 1)).toBe('comment');
+    expect(formatPlural('vote', 2)).toBe("vote's")
 })
