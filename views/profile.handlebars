@@ -1,7 +1,7 @@
 <section class="profile-greeting">
     {{#if isUser}}
         <div class="greeting-text">
-            <h2>{{timeOfDay date}} {{user.username}}</h2>
+            <h2>{{timeOfDay date}} {{username}}</h2>
         </div>
     {{else}}
         <div>
@@ -19,17 +19,18 @@
         {{/if}}
         <div class="profile-post border-box">
             <ul>
-                {{#if user.posts}}
-                    {{#each user.posts as |post|}}
-                        <li class="profile-post-list">
-                            <h3><a href="/post/{{post.id}}">{{post.title}}</a></h3>
-                            <p>{{post.post_info}}</p>
-                            <a href="/post/edit/{{post.id}}">Edit</a>
-                        </li>
-                    {{/each}}
-                {{else}}
+                {{#each user.posts as |post|}}
+                    <li class="profile-post-list">
+                        <h3><a href="/post/{{post.id}}">{{post.title}}</a></h3>
+                        <p>{{post.post_info}}</p>
+                        {{#if ../isUser}}<a href='/post/edit/{{post.id}}'>Edit</a>{{/if}}
+                    </li>
+                {{/each}}
+                {{#unless user.posts}}
+                <li>
                     <h4>User has no posts</h4>
-                {{/if}}
+                </li>
+                {{/unless}}
             </ul>
         </div>
     </section>
