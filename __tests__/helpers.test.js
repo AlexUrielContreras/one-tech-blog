@@ -23,5 +23,5 @@ test('returns date and mm/dd/yy format', () => {
 
 test('return the plural word', () => {
     expect(formatPlural('comment', 1)).toBe('comment');
-    expect(formatPlural('vote', 2)).toBe("vote's")
+    expect(formatPlural('vote', 2)).toBe("votes")
 })

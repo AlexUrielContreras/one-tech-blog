@@ -1,7 +1,7 @@
 <artical>
     <div class="post-title">
         <h2>{{ title }}</h2>
-        <span class="font-span">by {{ user.username }} {{ createdAt }}</span>
+        <span class="font-span">by {{ user.username }} on {{formatDate createdAt}}</span>
     </div>
     <div class="post-body">
         <p>{{ post_info }}</p>

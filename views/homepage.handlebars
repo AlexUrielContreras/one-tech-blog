@@ -4,7 +4,7 @@
             {{> post-info}}
             <div>
                 {{ comments.length }} <a href="/post/{{id}}">
-                <span class="font-span">Comment</span> </a>
+                <span class="font-span">{{formatPlural 'Comment' comments.length}}</span> </a>
             </div>
         </li>
     {{/each}}

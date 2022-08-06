@@ -20,7 +20,7 @@ module.exports = {
             return str
         }
 
-        return `${str}'s`
+        return `${str}s`
     }
 
 }
