@@ -2,10 +2,10 @@ const { timeOfDay, formatDate, formatPlural } = require('../utils/helpers')
 
 
 test('return message based on time of day', () => {
-   const morning = 6
-   const afternoon = 12
-   const evening = 18
-   const night = 2
+   const morning = new Date('08-01-2022 06:00:00').getHours();
+   const afternoon = new Date('08-01-2022 12:00:00').getHours();
+   const evening = new Date('08-01-2022 18:00:00').getHours();
+   const night = new Date('08-01-2022 23:00:00').getHours();
 
     expect(timeOfDay(morning)).toBe('Good Morning');
     expect(timeOfDay(afternoon)).toBe('Good Afternoon')
@@ -15,7 +15,6 @@ test('return message based on time of day', () => {
 
 
 test('returns date and mm/dd/yy format', () => {
-
     const date = new Date('08-06-2022 11:15:25')
 
     expect(formatDate(date)).toBe('6/8/2022')
