@@ -19,6 +19,19 @@ module.exports = {
         if (num === 1 ) return str;
 
         return `${str}s`;
+    },
+
+    formatTitle: (title) => {
+        const check = title.split(' ');
+
+        if (check.length <= 6 ) {
+            return title;
+        } else {
+            const newTitle = check.slice(0, 8).join(' ');
+
+            return `${newTitle} ...`
+        }
+
     }
 
 }
