@@ -2,9 +2,8 @@
     --main-border: 2px solid black;
 }
 
-* {
-    box-sizing: border-box;
-    
+*, *::before, *::after {
+    box-sizing: border-box
 }
 
 html, body {
@@ -52,10 +51,16 @@ button {
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
     letter-spacing: 1px;
+    padding: 0;
+    margin-left: 5px
 }
 
 .font-span {
     font-size: 1.2rem;
+}
+
+.form-span {
+    font-size: 1.2rem
 }
 
 .wrapper {
@@ -92,22 +97,32 @@ button {
 /*  FORM STYLES */
 
 .form-wrapper {
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
-    justify-content: space-around;
-    align-items: center
+    justify-content:center;
+    align-items: center;
+    font-size: 1.3rem;
 }
-
-.form > section{
+.cred-form > label{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+}
+.col {
+    padding: 0 5vw
 }
 
-section > input {
-    margin-bottom: 1vh
+.col:nth-child(1){
+    border-right: var(--main-border)
 }
 
+.col > h2 {
+    margin-bottom: 2vh;
+}
 
+input[name="login-form"],  input[name="signup-form"]{
+    margin: .5vh 0 1vh 0;
+    padding: 1vh
+};
 
 
 /*  PROFILE STYLES */

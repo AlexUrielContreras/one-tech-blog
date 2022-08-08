@@ -1,35 +1,45 @@
 <section class="form-wrapper">
-    <form class="signup-form form">
-        <section>
-            <label for="signup-username">Username</label>
-            <input type="text" id="signup-username" name="signup-form" />
-        </section>
-        <section>
-            <label for="signup-email">Email</label>
-            <input type="email" id="signup-email" name="signup-form" />
-        </section>
-        <section>
-            <label for="signup-password">Password</label>
-            <input type="password" id="signup-password" name="signup-form" />
-        </section>
-        <div>
-            <button type="submit">Signup</button>
-        </div>
-    </form>
-    
-    <form class="login-form form">
-        <section>
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" name="login-form" />
-        </section>
-        <section>
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" name="login-form" />
-        </section>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-    </form>
+    <div class="col">
+        <h2>Signup</h2>
+        <form class="signup-form cred-form">
+            <label>
+                <span class="form-span">Username</span>
+                <input type="text" name="signup-form" required/>
+            </label>
+            
+            <label >
+                <span class="form-span">Email</span>
+                <input type="email" name="signup-form" required/>
+            </label>
+        
+            <label >
+                <span class="form-span">Password</span>
+                <input type="password" name="signup-form" required/>
+            </label>   
+            
+            <div>
+                <button type="submit">Submit</button>
+            </div>   
+        </form>
+    </div>
+    <div class="col">
+        <h2>Login</h2>
+        <form class="login-form cred-form"> 
+            <label>
+                <span class="form-span">Email</span>
+                <input type="email"  id='login-email' name="login-form" required/>
+            </label>
+            
+            <label>
+                <span class="form-span">Password</span>
+                <input type="password"  id='login-password' name="login-form" required/>
+            </label>
+            
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 </section>
 <script src="javascript/signup.js"></script>
 <script src="javascript/login.js"></script>
