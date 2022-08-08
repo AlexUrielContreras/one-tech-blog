@@ -21,7 +21,7 @@
             <ul>
                 {{#each user.posts as |post|}}
                     <li class="profile-post-list">
-                        <h3><a href="/post/{{post.id}}">{{post.title}}</a></h3>
+                        <h3><a href="/post/{{post.id}}">{{formatTitle post.title}}</a></h3>
                         <p>{{post.post_info}}</p>
                         {{#if ../isUser}}<a href='/post/edit/{{post.id}}'>Edit</a>{{/if}}
                     </li>
