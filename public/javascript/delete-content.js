@@ -1,7 +1,6 @@
 async function deletePostHandler() {
 
-    const id = window.location.toString().trim('/')[window.location.toString().trim('/').length - 1]
-    console.log(id)
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1]
 
     const response = await fetch(`/api/posts/${id}`, {
         method: 'delete'
