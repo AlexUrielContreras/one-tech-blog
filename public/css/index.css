@@ -55,7 +55,7 @@ button {
     cursor: pointer;
     letter-spacing: 1px;
     padding: 0;
-    margin-left: 5px;
+   
 }
 
 textarea {
@@ -151,22 +151,6 @@ svg {
     margin-top: 4vh;
 }
 
-/* Scrollbar styles */
-
-.profile-post::-webkit-scrollbar { 
-   width: 5px;
-}
-
-.profile-post::-webkit-scrollbar-track {
-    background: rgb(179, 177, 177);
-    border-radius: 10px;
-}
-
-.profile-post::-webkit-scrollbar-thumb {
-    background: rgb(107, 105, 105);
-    border-radius: 10px
-}
-
 /* User post in profile style */
 
 .profile-post {
@@ -213,25 +197,66 @@ svg {
     margin: 1vh 0;
 }
 
+/*   SINGLE PAGE STYLES */
+
+.single-post-wrapper {
+    margin-top: 5vh;
+}
+
+.comment-section {
+    max-width: 80%;
+    margin: 6vh auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: start
+
+}
+
+.add-comment > textarea {
+    margin: 1vh 0
+}
+
 /*    Comment styles */
+
+.comment-wrapper {
+    width: 40%;
+}
 
 .comment-list {
     border: var(--main-border);
-    padding: 1vh;
-    margin: 2vh 0;
-}
-
-.comment-wrapper {
-    max-width: 40%;
-    max-height: 70vh;
     overflow: auto;
+    height: 60vh
 }
 
-.comment-wrapper::-webkit-scrollbar {
-    display: none;
+.comment-list-items {
+    border: var(--main-border);
+    padding: 1vh;
+    margin: 2vh;
 }
 
-.add-comments {
-    display: flex;
-    justify-content:space-between;
+.comment-list-items > div {
+    margin-bottom: .5vh
+}
+
+
+/* Scrollbar styles */
+
+.comment-list::-webkit-scrollbar,
+.profile-post::-webkit-scrollbar { 
+   width: 5px;
+}
+.comment-list::-webkit-scrollbar-track,
+.profile-post::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 10px;
+}
+.comment-list::-webkit-scrollbar-thumb,
+.profile-post::-webkit-scrollbar-thumb {
+    background: rgb(107, 105, 105);
+    border-radius: 10px
 }
