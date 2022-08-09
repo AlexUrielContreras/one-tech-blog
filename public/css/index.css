@@ -18,9 +18,12 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
     margin: 0;
+}
+
+p {
+    margin: 1vh 0
 }
 
 header {
@@ -55,14 +58,13 @@ button {
     margin-left: 5px;
 }
 
+textarea {
+    resize: none;
+}
+
 .font-span {
     font-size: 1.2rem;
 }
-
-.form-span {
-    font-size: 1.2rem;
-}
-
 .wrapper {
     max-width: 70vw;
     margin: 0 auto;
@@ -90,7 +92,7 @@ button {
 .post-body {
     border: var(--main-border);
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 1vh 0;
 }
 
@@ -119,9 +121,9 @@ button {
     margin-bottom: 2vh;
 }
 
-input[name="login-form"],  input[name="signup-form"] {
+input {
     margin: .5vh 0 1vh 0;
-    padding: 1vh;
+    padding: .5vh;
 };
 
 
@@ -133,7 +135,7 @@ svg {
 
 .profile-greeting {
     text-align: center;
-    margin: 3vh 0 6vh 0;
+    margin: 3vh 0 ;
     padding: 20px 0;
     font-size: 1.5rem;
     border: var(--main-border);
@@ -146,23 +148,47 @@ svg {
 }
 
 .profile-wrapper > section {
-    margin-bottom: 4vh;
+    margin-top: 4vh;
 }
+
+/* Scrollbar styles */
+
+.profile-post::-webkit-scrollbar { 
+   width: 5px;
+}
+
+.profile-post::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 10px;
+}
+
+.profile-post::-webkit-scrollbar-thumb {
+    background: rgb(107, 105, 105);
+    border-radius: 10px
+}
+
+/* User post in profile style */
 
 .profile-post {
     width: 32vw;
     max-height: 50vh;
-    padding: 15px;
-    overflow-y: scroll;
-    margin-bottom: 2vh;
-}
-
-.profile-post::-webkit-scrollbar {
-    display: none;
+    padding: 0 15px;
+    overflow-y: auto;
 }
 
 .profile-post-list {
-    margin-bottom: 3vh;
+    padding: 2vh 0 2vh 0;
+    border-bottom: var(--main-border)
+}
+
+.profile-post-list > .edit-btn {
+   margin: 10px 0;
+   font-weight: 600;
+   font-size: 1.1rem
+}
+
+.profile-post-list > .edit-btn:hover {
+    text-decoration: underline
 }
 
 .like-list {
@@ -174,19 +200,18 @@ svg {
 }
 
 .create-post {
-    padding: 15px;
+    max-height: 50vh;
+    padding: 1.5vh;
     width: 32vw;
 }
 
+.post-form > div {
+    margin-top: 1.5vh
+}
 .border-box {
     border: var(--main-border);
     margin: 1vh 0;
 }
-
-textarea {
-    resize: none;
-}
-
 
 /*    Comment styles */
 
