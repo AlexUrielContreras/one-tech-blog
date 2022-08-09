@@ -3,7 +3,7 @@
 }
 
 *, *::before, *::after {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html, body {
@@ -20,7 +20,7 @@ h4,
 h5,
 h6,
 p {
-    margin: 0
+    margin: 0;
 }
 
 header {
@@ -31,12 +31,12 @@ header {
     padding: 1vh 0;
     letter-spacing: 1px;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 a {
     text-decoration: none;
-    color: black
+    color: black;
 }
 
 ul {
@@ -52,7 +52,7 @@ button {
     cursor: pointer;
     letter-spacing: 1px;
     padding: 0;
-    margin-left: 5px
+    margin-left: 5px;
 }
 
 .font-span {
@@ -60,12 +60,12 @@ button {
 }
 
 .form-span {
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 .wrapper {
     max-width: 70vw;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .post-list-hp {
@@ -80,18 +80,18 @@ button {
 .post-title {
     display: flex;
     justify-content: space-between;
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 .post-title > span {
-    padding-top: .6vh
+    padding-top: .6vh;
 }
 
 .post-body {
     border: var(--main-border);
     border-radius: 15px;
     padding: 10px;
-    margin: 1vh 0
+    margin: 1vh 0;
 }
 
 /*  FORM STYLES */
@@ -108,24 +108,28 @@ button {
     flex-direction: column;
 }
 .col {
-    padding: 0 5vw
+    padding: 0 5vw;
 }
 
 .col:nth-child(1){
-    border-right: var(--main-border)
+    border-right: var(--main-border);
 }
 
 .col > h2 {
     margin-bottom: 2vh;
 }
 
-input[name="login-form"],  input[name="signup-form"]{
+input[name="login-form"],  input[name="signup-form"] {
     margin: .5vh 0 1vh 0;
-    padding: 1vh
+    padding: 1vh;
 };
 
 
 /*  PROFILE STYLES */
+/* style in this position wont apply ???????????????? */
+svg {
+    font-size: large
+}
 
 .profile-greeting {
     text-align: center;
@@ -142,7 +146,7 @@ input[name="login-form"],  input[name="signup-form"]{
 }
 
 .profile-wrapper > section {
-    margin-bottom:4vh
+    margin-bottom: 4vh;
 }
 
 .profile-post {
@@ -150,13 +154,12 @@ input[name="login-form"],  input[name="signup-form"]{
     max-height: 50vh;
     padding: 15px;
     overflow-y: scroll;
-    margin-bottom: 2vh
+    margin-bottom: 2vh;
 }
 
 .profile-post::-webkit-scrollbar {
-    display: none
+    display: none;
 }
-
 
 .profile-post-list {
     margin-bottom: 3vh;
@@ -167,7 +170,7 @@ input[name="login-form"],  input[name="signup-form"]{
     max-height: 50vh;
     margin: 10px 0;
     padding: 15px;
-    overflow: auto
+    overflow: auto;
 }
 
 .create-post {
@@ -177,11 +180,11 @@ input[name="login-form"],  input[name="signup-form"]{
 
 .border-box {
     border: var(--main-border);
-    margin: 1vh 0
+    margin: 1vh 0;
 }
 
 textarea {
-    resize: none
+    resize: none;
 }
 
 
@@ -190,20 +193,20 @@ textarea {
 .comment-list {
     border: var(--main-border);
     padding: 1vh;
-    margin: 2vh 0
+    margin: 2vh 0;
 }
 
 .comment-wrapper {
     max-width: 40%;
     max-height: 70vh;
-    overflow: auto
+    overflow: auto;
 }
 
 .comment-wrapper::-webkit-scrollbar {
-    display: none
+    display: none;
 }
 
 .add-comments {
     display: flex;
-    justify-content:space-between
+    justify-content:space-between;
 }

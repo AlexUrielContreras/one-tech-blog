@@ -39,26 +39,29 @@
     <section>
         <h2>Create New Post</h2>
         <div class="create-post border-box">
-            <form class="post-form form">
-                <div >
-                    <label for='title'>Title: </label>
+            <form class="post-form cred-form">
+                
+                <label>
+                    <span>Title</span>
                     <input type='text' id="title" name="post-create" />
-                </div>
-                <div>
-                    <label for="post-url">Post url: </label>
-                    <input type="text" id="post-url" name="post-create" />
-                </div>
-                <div>
-                    <label for="post-info">Description: </label>
-                    <textarea type="text" id="post-info" rows="8" cols="70" maxlength="1000"></textarea>
-                </div>
+                </label>
+                
+                <label >
+                    <span>Post Url</span>
+                    <input type="text" id="post-url" name="post-create" />    
+                </label>  
+
+                <label>
+                    <span>Description</span>
+                    <textarea type="text" id="post-info" rows="8" cols="70" maxlength="600"></textarea>
+                </label>
+                
                 <div>
                     <button type="submit">Post</button>
                 </div>
             </form>
         </div>
     </section>
-
     {{/if}}
     <div>
         {{#if isUser}}
