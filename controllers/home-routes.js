@@ -117,8 +117,15 @@ router.get('/post/edit/:id', (req, res) => {
     })
     .then(viewPostData => {
 
-        const post = viewPostData.get({ plain: true})
-        res.render('edit', {post, loggedIn: req.session.loggedIn, username: req.session.username})
+        console.log(req.session, viewPostData)
+        if (req.session.user_id !== viewPostData.user_id) {
+            res.status(400).end();
+        } else {
+            const post = viewPostData.get({ plain: true});
+
+            res.render('edit', {post, loggedIn: req.session.loggedIn, username: req.session.username})
+        }
+
     })
     .catch(err => {
         console.log(err)

@@ -1,12 +1,29 @@
-<artical>
+<div class="edit-wrapper">
     <form class="edit-form">
-        <input type="text" id='edit-title' value="{{post.title}}" />
-        <input type="text" id='edit-url' value="{{post.post_url}}">
-        <textarea type="text" id="edit-info" rows="10" cols="80" maxlength="1000">{{post.post_info}}</textarea>
-        <button type="submit">Edit</button>
-        <button type="button" id="delete-post-btn">Delete</button>
+        <div>
+            <h2>Title</h2>
+            <input type="text" id='edit-title' value="{{post.title}}" />
+        </div>
+
+        <div>
+            <h2>Post Url</h2>
+            <input type="text" id='edit-url' value="{{post.post_url}}">
+        </div>
+
+        <div>
+            <h2>Description</h2>
+            <textarea type="text" id="edit-info" rows="10" cols="80" maxlength="1000">{{post.post_info}}</textarea>
+        </div>
+
+        
+        <button type="submit">Edit Post</button>
+        
+        
     </form>
-</artical>
+    <div class="delete-div">
+        <button type="button" id="delete-post-btn">DELETE POST</button>
+    </div>
+</div>
 
 <script src="/javascript/edit-content.js"></script>
 <script src="/javascript/delete-content.js"></script>

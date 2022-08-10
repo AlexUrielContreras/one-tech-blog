@@ -260,3 +260,28 @@ svg {
     background: rgb(107, 105, 105);
     border-radius: 10px
 }
+
+/*  EDIT STYLES */
+.edit-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.edit-form {
+    margin-top: 5vh
+}
+
+.edit-form > div {
+    margin: 2vh 0
+}
+
+.delete-div {
+    border: var(--main-border);
+    padding: 3vw 2vw;
+    border-radius: 50px;
+}
+
+.delete-div:hover {
+    background-color: red
+}
