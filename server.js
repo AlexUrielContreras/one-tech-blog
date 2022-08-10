@@ -33,7 +33,10 @@ const sess = {
     secret: process.env.COOKIE_PW,
     cookie: {},
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new SequelizeStore({
+        db: sequelize
+    })
 };
 
 app.use(session(sess));
