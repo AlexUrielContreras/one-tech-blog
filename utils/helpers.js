@@ -12,7 +12,12 @@ module.exports = {
     },
 
     formatDate: (date) => {
-        return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
+        const today = new Date().getDate();
+        const posted = new Date(date).getDate()
+
+        if (posted === today) return 'posted Today'
+        
+        return `on ${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
     },
 
     formatPlural: (str , num) => {
@@ -24,13 +29,10 @@ module.exports = {
     formatTitle: (title) => {
         const check = title.split(' ');
 
-        if (check.length <= 6 ) {
-            return title;
-        } else {
-            const newTitle = check.slice(0, 8).join(' ');
-
-            return `${newTitle} ...`
-        }
+        if (check.length <= 6 ) return title;
+    
+        const newTitle = check.slice(0, 8).join(' ');
+        return `${newTitle} ...`
 
     }
 

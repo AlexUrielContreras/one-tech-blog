@@ -14,10 +14,12 @@ test('return message based on time of day', () => {
 });
 
 
-test('returns date and mm/dd/yy format', () => {
-    const date = new Date('08-06-2022 11:15:25')
+test('returns date in mm/dd/yy format if not posted today', () => {
+    const today = new Date();
+    const date = new Date('08-06-2022 11:15:25');
 
-    expect(formatDate(date)).toBe('8/6/2022')
+    expect(formatDate(today)).toBe('posted Today')
+    expect(formatDate(date)).toBe('on 8/6/2022')
 });
 
 test('return the plural word', () => {
