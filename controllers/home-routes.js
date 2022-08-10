@@ -16,8 +16,9 @@ router.get('/', (req, res) => {
     })
     .then(viewPostData => {
 
+        console.log(viewPostData)
         const posts = viewPostData.map(post => post.get({ plain: true }));
-
+        console.log(posts)
         res.render('homepage' , {posts, loggedIn: req.session.loggedIn, username: req.session.username})
     })
     .catch(err => {
@@ -29,7 +30,7 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
-        return
+        return;
     }
 
     res.render('signup')
@@ -50,8 +51,8 @@ router.get('/profile/:username', (req, res) => {
     .then(dbUserData => {
 
         if (!dbUserData) {
-            res.status(404).end()
-            return
+            res.status(404).end();
+            return;
         }
 
         const date = new Date().getHours();
@@ -96,7 +97,7 @@ router.get('/post/:id', (req, res) => {
     .then(viewPostData => {
         if (!viewPostData) {
             res.status(404).end();
-            return
+            return;
         }
 
         const post = viewPostData.get({ plain: true });
@@ -117,15 +118,21 @@ router.get('/post/edit/:id', (req, res) => {
     })
     .then(viewPostData => {
 
-        console.log(req.session, viewPostData)
+        if(!viewPostData) {
+            res.status(404).end();
+            return;
+        } 
+
+        console.log(req.session, viewPostData);
+
         if (req.session.user_id !== viewPostData.user_id) {
-            res.status(400).end();
+            res.status(403).end();
+            return;
         } else {
             const post = viewPostData.get({ plain: true});
 
             res.render('edit', {post, loggedIn: req.session.loggedIn, username: req.session.username})
         }
-
     })
     .catch(err => {
         console.log(err)
