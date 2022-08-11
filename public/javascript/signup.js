@@ -27,9 +27,18 @@ async function signupFormHandler(e) {
 
 }
 
+function customError() {
+    const pwError = document.querySelector('#signup-password')
+
+    console.log(pwError.validity)
+   
+    if(pwError.validity.tooShort || pwError.validity.valueMissing) {
+        pwError.setCustomValidity('Password must be 4-20 Characters')
+    } else {
+        pwError.setCustomValidity('')
+    }
+}
 
 
-
-
-
+document.querySelector('#signup-password').addEventListener('input', customError);
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
