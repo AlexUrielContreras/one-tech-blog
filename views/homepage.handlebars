@@ -2,7 +2,7 @@
     {{#each posts as |p|}}
         <li class="post-list-items">
             {{> post-info}}
-            <div>
+            <div class="sm-screen-comment">
                 {{ comments.length }} <a href="/post/{{id}}">
                 <span class="font-span">{{formatPlural 'Comment' comments.length}}</span> </a>
             </div>

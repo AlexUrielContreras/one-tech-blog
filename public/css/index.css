@@ -285,3 +285,32 @@ svg {
 .delete-div:hover {
     background-color: red
 }
+
+
+
+/* Media Querires */
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction:column;
+        align-items: center
+    }
+
+    nav > a {
+        margin-right: 20px
+    }
+
+    .post-title {
+        display: flex;
+        flex-direction:column;
+        text-align: center
+    }
+
+    .sm-screen-comment {
+        text-align:end
+    }
+
+    .font-span {
+        font-size: 1.1rem
+    }
+}
