@@ -1,10 +1,11 @@
 module.exports = {
     timeOfDay: (time) => {
-        if (time >= 6 && time < 12) {
+        const currentTime = time.getHours()
+        if (currentTime >= 6 && currentTime < 12) {
             return 'Good Morning'
-        } else if (time >= 12 && time < 18) {
+        } else if (currentTime >= 12 && currentTime < 18) {
             return 'Good Afternoon'
-        } else if (time >= 18 && time < 23) {
+        } else if (currentTime >= 18 && currentTime < 23) {
             return 'Good Evening'
         } else {
             return 'Good Night'
