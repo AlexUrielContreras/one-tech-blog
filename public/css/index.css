@@ -105,19 +105,22 @@ textarea {
     align-items: center;
     font-size: 1.3rem;
 }
-.cred-form > label{
+.signup-form > label ,
+.login-form > label {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1vh
 }
-.col {
+
+.form-col {
     padding: 0 5vw;
 }
 
-.col:nth-child(1){
+.form-col:nth-child(1){
     border-right: var(--main-border);
 }
 
-.col > h2 {
+.form-col > h2 {
     margin-bottom: 2vh;
 }
 
@@ -296,6 +299,10 @@ svg {
         align-items: center
     }
 
+    .sm-style-main-title {
+        font-size: 2.3rem
+    }
+
     nav > a {
         margin-right: 20px
     }
@@ -303,14 +310,28 @@ svg {
     .post-title {
         display: flex;
         flex-direction:column;
-        text-align: center
+        text-align: center;
     }
 
     .sm-screen-comment {
         text-align:end
     }
 
+    /* Small Form Style */
+
     .font-span {
         font-size: 1.1rem
+    }
+
+    .form-wrapper {
+        flex-direction: column; 
+    }
+
+    .form-col {
+        margin-bottom: 5vh;
+    }
+
+    .form-col:nth-child(2){
+        border-left: var(--main-border);
     }
 }
