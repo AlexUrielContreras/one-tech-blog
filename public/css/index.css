@@ -106,7 +106,8 @@ textarea {
     font-size: 1.3rem;
 }
 .signup-form > label ,
-.login-form > label {
+.login-form > label,
+.post-form > label{
     display: flex;
     flex-direction: column;
     margin-bottom: 1vh
@@ -187,7 +188,7 @@ svg {
 }
 
 .create-post {
-    max-height: 50vh;
+    min-height: 47vh;
     padding: 1.5vh;
     width: 32vw;
 }
@@ -325,6 +326,7 @@ svg {
 
     .form-wrapper {
         flex-direction: column; 
+        margin-top: 2vh
     }
 
     .form-col {
@@ -334,4 +336,12 @@ svg {
     .form-col:nth-child(2){
         border-left: var(--main-border);
     }
+
+    /*  Profile Styles */
+
+   
+    .profile-post,.like-list, .create-post {
+        width: 70vw
+    }
+
 }
