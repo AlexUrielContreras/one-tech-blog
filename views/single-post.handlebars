@@ -3,10 +3,10 @@
         {{> post-info post}}   
     </section>
 
-    <section class="comment-section">
+    <section class="comment-wrapper">
         <div class="add-comment">
             <h2>Add Comment</h2>
-            <textarea id='post-comment' rows='5' cols="35"></textarea>
+            <textarea id='post-comment' rows='10' cols="30"></textarea>
             {{#if loggedIn}}
                 <button type="button" id="comment-btn">post comment</button>
             {{else}}
@@ -14,15 +14,15 @@
             {{/if}}
         </div>
 
-        <div class="comment-wrapper">
+        <div class="comment-section">
             <h2>Post Comments</h2>
             <ul class="comment-list">
                 {{#each post.comments}}
                     <li class='comment-list-items'>
-                        <div>
+                        <div class="comment-title">
                             {{user.username}} {{formatDate createdAt}}
                         </div>
-                        <div>
+                        <div class="comment-text">
                             {{comment_text}}
                         </div>
                     </li>     
@@ -31,4 +31,6 @@
         </div>
     </section>
 </div>
-<script src="/javascript/add-comment.js"></script>
+{{#if loggedIn}}
+    <script src="/javascript/add-comment.js"></script>
+{{/if}}

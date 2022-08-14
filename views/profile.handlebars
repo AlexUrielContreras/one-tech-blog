@@ -10,7 +10,7 @@
     {{/if}}
 </section>
 
-<section class="profile-wrapper ">
+<div class="profile-wrapper ">
     <section>
         {{#if isUser}}
             <h2>My Posts</h2>
@@ -39,7 +39,7 @@
     <section>
         <h2>Create New Post</h2>
         <div class="create-post border-box">
-            <form class="post-form cred-form">       
+            <form class="post-form">       
                 <label>
                     <span class="font-span">Title</span>
                     <input type='text' id="title" name="post-create" />
@@ -52,7 +52,7 @@
 
                 <label>
                     <span class="font-span">Description</span>
-                    <textarea type="text" id="post-info" rows="12" cols="100" maxlength="700"></textarea>
+                    <textarea type="text" id="post-info" rows="12" cols="70" maxlength="700"></textarea>
                 </label>
                 
                 <div>
@@ -74,7 +74,7 @@
             </ul>
         </div>
     </section>
-</section>
+</div>
 
 {{#if isUser}}
     <script src="/javascript/post.js"></script>

@@ -55,7 +55,7 @@ router.get('/profile/:username', (req, res) => {
             return;
         }
 
-        let date = new Date().getHours();
+        const date = new Date().getHours();
 
         console.log(date)
   

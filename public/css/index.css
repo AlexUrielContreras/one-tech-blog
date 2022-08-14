@@ -105,19 +105,23 @@ textarea {
     align-items: center;
     font-size: 1.3rem;
 }
-.cred-form > label{
+.signup-form > label ,
+.login-form > label,
+.post-form > label{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1vh
 }
-.col {
+
+.form-col {
     padding: 0 5vw;
 }
 
-.col:nth-child(1){
+.form-col:nth-child(1){
     border-right: var(--main-border);
 }
 
-.col > h2 {
+.form-col > h2 {
     margin-bottom: 2vh;
 }
 
@@ -184,7 +188,7 @@ svg {
 }
 
 .create-post {
-    max-height: 50vh;
+    min-height: 47vh;
     padding: 1.5vh;
     width: 32vw;
 }
@@ -203,9 +207,9 @@ svg {
     margin-top: 5vh;
 }
 
-.comment-section {
+.comment-wrapper {
     max-width: 80%;
-    margin: 6vh auto 0;
+    margin: 6vh auto 0 ;
     display: flex;
     justify-content: space-between;
 }
@@ -217,14 +221,19 @@ svg {
 
 }
 
+.comment-title {
+    font-weight: bolder
+}
+
+
 .add-comment > textarea {
     margin: 1vh 0
 }
 
 /*    Comment styles */
 
-.comment-wrapper {
-    width: 40%;
+.comment-section {
+    width: 30vw
 }
 
 .comment-list {
@@ -237,6 +246,7 @@ svg {
     border: var(--main-border);
     padding: 1vh;
     margin: 2vh;
+    flex-wrap:wrap
 }
 
 .comment-list-items > div {
@@ -284,4 +294,89 @@ svg {
 
 .delete-div:hover {
     background-color: red
+}
+
+
+
+/* Media Querires */
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction:column;
+        align-items: center
+    }
+
+    .sm-style-main-title {
+        font-size: 2.3rem
+    }
+
+    nav > a {
+        margin-right: 20px
+    }
+
+    .post-title {
+        display: flex;
+        flex-direction:column;
+        text-align: center;
+    }
+
+    .sm-screen-comment {
+        text-align:end
+    }
+
+    /* Small Form Style */
+
+    .font-span {
+        font-size: 1.1rem
+    }
+
+    .form-wrapper {
+        flex-direction: column; 
+        margin-top: 2vh
+    }
+
+    .form-col {
+        margin-bottom: 5vh;
+    }
+
+    .form-col:nth-child(2){
+        border-left: var(--main-border);
+    }
+
+    /*  Profile Styles */
+
+   
+    .profile-post,.like-list, .create-post {
+        width: 70vw
+    }
+
+
+    .edit-wrapper{
+        flex-direction:column
+    }
+
+    .delete-div {
+        border: none;
+        margin-top: 6vh
+    }
+
+    .add-comment {
+        align-items: center
+    }
+
+    .comment-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin: 5vh auto 0;
+    }
+
+    .comment-section {
+        width: 60vw;
+        margin-top: 5vh;
+        text-align: center
+    }
+
+    .comment-text {
+        font-size: .9rem
+    }
 }
