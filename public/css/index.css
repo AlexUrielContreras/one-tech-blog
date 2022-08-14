@@ -344,4 +344,14 @@ svg {
         width: 70vw
     }
 
+
+    .edit-wrapper{
+        flex-direction:column
+    }
+
+    .delete-div {
+        border: none;
+        margin-top: 6vh
+    }
+
 }
