@@ -207,9 +207,9 @@ svg {
     margin-top: 5vh;
 }
 
-.comment-section {
+.comment-wrapper {
     max-width: 80%;
-    margin: 6vh auto 0;
+    margin: 6vh auto 0 ;
     display: flex;
     justify-content: space-between;
 }
@@ -221,14 +221,19 @@ svg {
 
 }
 
+.comment-title {
+    font-weight: bolder
+}
+
+
 .add-comment > textarea {
     margin: 1vh 0
 }
 
 /*    Comment styles */
 
-.comment-wrapper {
-    width: 40%;
+.comment-section {
+    width: 30vw
 }
 
 .comment-list {
@@ -241,6 +246,7 @@ svg {
     border: var(--main-border);
     padding: 1vh;
     margin: 2vh;
+    flex-wrap:wrap
 }
 
 .comment-list-items > div {
@@ -354,4 +360,23 @@ svg {
         margin-top: 6vh
     }
 
+    .add-comment {
+        align-items: center
+    }
+
+    .comment-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin: 5vh auto 0;
+    }
+
+    .comment-section {
+        width: 60vw;
+        margin-top: 5vh;
+        text-align: center
+    }
+
+    .comment-text {
+        font-size: .9rem
+    }
 }
