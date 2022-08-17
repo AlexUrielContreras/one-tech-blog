@@ -65,8 +65,8 @@ textarea {
 .font-span {
     font-size: 1.2rem;
 }
-.wrapper {
-    max-width: 70vw;
+.main-wrapper {
+    width: 75vw;
     margin: 0 auto;
 }
 
@@ -301,6 +301,11 @@ svg {
 /* Media Querires */
 
 @media screen and (max-width: 600px) {
+   
+    .main-wrapper {
+        width: 90vw
+    }
+
     header {
         flex-direction:column;
         align-items: center
@@ -345,9 +350,16 @@ svg {
 
     /*  Profile Styles */
 
-   
-    .profile-post,.like-list, .create-post {
-        width: 70vw
+    .profile-wrapper {
+        justify-content: center;
+    }
+
+   .greeting-text {
+        font-size: 1.2rem
+   }
+
+    .profile-post, .like-list, .create-post {
+        width: 70vw;
     }
 
 
