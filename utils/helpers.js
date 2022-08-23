@@ -30,9 +30,9 @@ module.exports = {
     formatTitle: (title) => {
         const check = title.split(' ');
 
-        if (check.length <= 6 ) return title;
+        if (check.length < 7 ) return title;
     
-        const newTitle = check.slice(0, 8).join(' ');
+        const newTitle = check.slice(0, 7).join(' ');
         return `${newTitle} ...`
 
     }

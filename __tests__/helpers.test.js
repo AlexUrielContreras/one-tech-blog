@@ -31,6 +31,6 @@ test('shortens the title', () => {
     const longTitle = 'This title would be to big to fix so we shorten it'
     const shortTitle = 'This title is Good'
 
-    expect(formatTitle(longTitle)).toBe('This title would be to big to fix ...');
+    expect(formatTitle(longTitle)).toBe('This title would be to big to ...');
     expect(formatTitle(shortTitle)).toBe(shortTitle);
 })
