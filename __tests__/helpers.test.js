@@ -2,10 +2,10 @@ const { timeOfDay, formatDate, formatPlural, formatTitle } = require('../utils/h
 
 
 test('return message based on time of day', () => {
-   const morning = new Date('08-01-2022 06:00:00')
-   const afternoon = new Date('08-01-2022 12:00:00')
-   const evening = new Date('08-01-2022 18:00:00')
-   const night = new Date('08-01-2022 23:00:00')
+   const morning = new Date('08-01-2022 06:00:00').getHours();
+   const afternoon = new Date('08-01-2022 12:00:00').getHours();
+   const evening = new Date('08-01-2022 18:00:00').getHours();
+   const night = new Date('08-01-2022 23:00:00').getHours();
 
     expect(timeOfDay(morning)).toBe('Good Morning');
     expect(timeOfDay(afternoon)).toBe('Good Afternoon')

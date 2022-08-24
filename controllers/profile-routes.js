@@ -21,7 +21,7 @@ router.get('/:username', (req, res) => {
             return;
         }
 
-        const date = new Date();
+        const date = new Date().getHours();
   
         const user = dbUserData.get({plain: true});
 
