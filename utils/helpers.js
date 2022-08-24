@@ -1,5 +1,5 @@
 module.exports = {
-    timeOfDay: (time) => {
+    timeOfDay: (currentTime) => {
         
         if (currentTime >= 6 && currentTime < 12) {
             return 'Good Morning'
