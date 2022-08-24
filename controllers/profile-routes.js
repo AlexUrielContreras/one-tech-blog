@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {User, Post} = require('../models')
 
 
-router.get('/:username', (req, res) => {
+router.get('/profile/:username', (req, res) => {
     User.findOne({
         where: {
             username: req.params.username
