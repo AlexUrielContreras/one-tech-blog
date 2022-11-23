@@ -16,10 +16,10 @@
             <a href='/'><h1 class="sm-style-main-title">One Tech Blog</h1></a>
             <nav>
                 {{#if loggedIn}}
-                <a href='/profile/{{username}}'>Profile</a>
-                <button type="button" class="logout-btn">Logout</button>
+                    <a href='/profile/{{username}}'>Profile</a>
+                    <button type="button" class="logout-btn">Logout</button>
                 {{else}}
-                <a href='/login'>Login</a>
+                    <a href='/login'>Login</a>
                 {{/if}}
             </nav>
         </header>
