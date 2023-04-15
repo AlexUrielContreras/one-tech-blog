@@ -13,22 +13,21 @@
 <body>
     <div class="main-wrapper">
         <header>
-            <a href='/'><h1 class="sm-style-main-title">One Tech Blog</h1></a>
+            <h1 class="sm-style-main-title">
+                <a href='/'>One Tech Blog</a>
+            </h1>
             <nav>
                 {{#if loggedIn}}
-                <a href='/profile/{{username}}'>Profile</a>
-                <button type="button" class="logout-btn">Logout</button>
+                    <a href='/profile/{{username}}'>Profile</a>
+                    <button type="button" class="logout-btn">Logout</button>
                 {{else}}
-                <a href='/login'>Login</a>
+                    <a href='/login' class="login-btn">Login</a>
                 {{/if}}
             </nav>
         </header>
         <main>
             {{{ body }}}
         </main>
-        <footer>
-            
-        </footer>
     </div>
      {{#if loggedIn}}
         <script src="/javascript/logout.js"></script>

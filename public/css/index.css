@@ -29,12 +29,15 @@ p {
 header {
     display: flex;
     justify-content: space-between ;
-    align-items: end;
+    align-items: center;
     border-bottom: var(--main-border);
     padding: 1vh 0;
     letter-spacing: 1px;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
+}
+
+.login-btn {
+    font-size: 1.5rem
 }
 
 a {
@@ -60,6 +63,8 @@ textarea {
     resize: none;
 }
 
+/*          Dashboard Styles            */
+
 .font-span {
     font-size: 1.2rem;
 }
@@ -77,14 +82,16 @@ textarea {
     margin-bottom: 3vh;
 }
 
-.post-title {
+.post-header{
     display: flex;
     justify-content: space-between;
+    align-items: end;
     font-size: 1rem;
+    padding: 0 .5rem
 }
 
-.post-title > span {
-    padding-top: .6vh;
+.bold-text {
+    font-weight: 600
 }
 
 .post-body {
@@ -92,6 +99,11 @@ textarea {
     border-radius: 15px;
     padding: 5px 10px;
     margin: 1vh 0;
+}
+
+.post-comment-cta {
+    text-align: end;
+    padding-right: .5rem;
 }
 
 /*  FORM STYLES */

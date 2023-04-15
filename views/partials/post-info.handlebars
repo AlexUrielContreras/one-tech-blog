@@ -1,7 +1,7 @@
 <artical>
-    <div class="post-title">
+    <div class="post-header">
         <h2><a href="https://{{post_url}}">{{ formatTitle title }}</a></h2>
-        <span class="font-span">by {{ user.username }} {{formatDate createdAt}}</span>
+        <span class="font-span">by <span class="bold-text">{{ user.username }}</span> {{formatDate createdAt}}</span>
     </div>
     <div class="post-body">
         <p>{{ post_info }}</p>
